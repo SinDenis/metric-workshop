@@ -11,3 +11,22 @@ management:
     metrics:
       export:
         enabled: true
+
+spring:
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+        jdbc:
+          batch_size: 50
+          fetch_size: 50
+        order_inserts: true
+        order_updates: true
+  datasource:
+    password: password
+    username: sa
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+  liquibase:
+    change-log: changelog/changelog-master.yml
